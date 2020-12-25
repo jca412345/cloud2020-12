@@ -2,9 +2,8 @@ package com.diamone.springcloud.dto.codeenum;
 
 public enum CodeEnum {
     //定义各种状态
-    SUCCESS(200,"success"),
-    FAIL(444,"fail")
-    ;
+    SUCCESS(200, "success"),
+    FAIL(444, "fail");
     private int code;
     private String message;
 

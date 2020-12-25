@@ -2,19 +2,16 @@ server:
   port: 3344
 spring:
   application:
-    name: cloud-config-center
+    name: config
   cloud:
     config:
       server:
         git:
           uri: https://github.com/jca412345/springcloud-config.git
-          username: jca412345
-          password: jca4123
-          #default-label: main
-          ####搜索目录
-          search-paths:
-            - springcloud-config
-      label: main
+#          username: jca412345
+#          password: jca4123
+          search-paths: config
+          default-label: main
 
 eureka:
   client:
