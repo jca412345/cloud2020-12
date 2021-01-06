@@ -62,4 +62,9 @@ public class PaymentController {
         String result = paymentService.paymentCircuitBreaker(id);
         return result;
     }
+
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin(){
+        return "I'm payment";
+    }
 }

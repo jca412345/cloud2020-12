@@ -2,19 +2,16 @@ server:
   port: 3344
 spring:
   application:
-    name: cloud-config-center
+    name: config
   cloud:
     config:
       server:
         git:
           uri: https://github.com/jca412345/springcloud-config.git
-          username: jca412345
-          password: jca4123
-          #default-label: main
-          ####搜索目录
-          search-paths:
-            - springcloud-config
-      label: main
+#          username: jca412345
+#          password: jca4123
+          search-paths: config
+          default-label: main
 
 eureka:
   client:
@@ -22,3 +19,19 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka
+
+
+
+ #rabbit相关配置，暴露bus刷新配置的地点
+rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+#bus
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
